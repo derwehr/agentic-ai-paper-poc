@@ -1,0 +1,29 @@
+{
+  "mcp-conference-discovery-mock": {
+    "description": "Server to find conferences and their details.",
+    "address": {
+      "command": "node",
+      "args": [
+        "mcp-conference-discovery-mock/build/index.js"
+      ]
+    }
+  },
+  "mcp-conference-mediation-helpers-mock": {
+    "description": "Has tools for mediating during the booking process of a conference.",
+    "address": {
+      "command": "node",
+      "args": [
+        "mcp-conference-mediation-helpers-mock/build/index.js"
+      ]
+    }
+  },
+  "mcp-booking-mock": {
+    "description": "A service for booking flights and hotels for a conference.",
+    "address": {
+      "command": "node",
+      "args": [
+        "mcp-booking-mock/build/index.js"
+      ]
+    }
+  }
+}

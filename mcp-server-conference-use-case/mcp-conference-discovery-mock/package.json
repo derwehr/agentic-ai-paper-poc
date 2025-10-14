@@ -1,0 +1,27 @@
+{
+  "name": "mcp-conference-discovery",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "bin": {
+    "mcp-conference-discovery": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && copy src\\conference.json build\\"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.2",
+    "fuse.js": "^7.1.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2"
+  }
+}

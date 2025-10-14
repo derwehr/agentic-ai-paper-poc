@@ -1,0 +1,26 @@
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Log files
+logs/
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# Notebook checkpoints
+.ipynb_checkpoints

@@ -1,0 +1,26 @@
+{
+  "name": "mcp-booking-mock",
+  "version": "1.0.0",
+  "description": "A new MCP server.",
+  "type": "module",
+  "bin": {
+    "mcp-booking-mock": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "typescript": "^5.9.2"
+  }
+}
