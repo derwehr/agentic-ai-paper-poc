@@ -1,0 +1,5 @@
+python-dotenv
+uvicorn
+a2a-sdk[http-server]>=0.3.0
+openai-agents
+litellm

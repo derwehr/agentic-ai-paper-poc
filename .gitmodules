@@ -1,0 +1,3 @@
+[submodule "use-case-test-a2a/a2a-samples"]
+	path = use-case-test-a2a/a2a-samples
+	url = https://github.com/a2aproject/a2a-samples.git

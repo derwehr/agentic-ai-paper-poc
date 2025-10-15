@@ -4,14 +4,25 @@ This repository contains the projects related to an agentic AI conference bookin
 
 ## Overview
 
-This project is divided into two main components:
+This project is divided into three main components:
 
 1.  **`mcp-server-conference-use-case/`**: This directory contains all the Node.js-based MCP (Model Context Protocol) servers required for the use case. This includes a service registry, mock servers for conference discovery and booking, and live server implementations that connect to real-world APIs. See the `README.md` inside this directory for detailed setup and configuration instructions.
 
 2.  **`use-case-test-agentsdk/`**: This directory contains a Python-based test framework for running and evaluating the conference booking agent. It includes different agent architectures (static vs. dynamic service discovery) and supports various language models. See the `README.md` inside this directory for instructions on how to set up the environment and run the tests.
 
-## Getting Started
+3.  **`use-case-test-a2a/`**: This directory contains an A2A (Agent-to-Agent) server that exposes the entire conference booking workflow as a single "skill". This allows other A2A-compatible agents to delegate the task to this specialized server.
+
+## Running the Evaluation Framework
 
 1.  **Set up the MCP Servers:** Begin by navigating to the `mcp-server-conference-use-case/` directory and following the setup instructions in its `README.md` to install and build the necessary servers.
 2.  **Set up the Test Framework:** Next, navigate to the `use-case-test-agentsdk/` directory and follow the setup instructions in its `README.md` to configure the Python environment and API keys.
 3.  **Run the Tests:** From the `use-case-test-agentsdk/` directory, you can run the evaluation scripts as described in the documentation to test the different agent architectures.
+
+## Running the A2A Agent Server
+
+The `use-case-test-a2a` directory provides an alternative way to run the conference agent, exposing it as a network service (or "skill").
+
+1.  **Set up the MCP Servers:** Ensure the servers in `mcp-server-conference-use-case/` are built.
+2.  **Set up the A2A Server:** Navigate to the `use-case-test-a2a/` directory and follow the setup instructions in its `README.md`.
+3.  **Run the Server:** Start the A2A server. You can then interact with it using the provided `test_client.py` or another A2A-compatible client.
+
