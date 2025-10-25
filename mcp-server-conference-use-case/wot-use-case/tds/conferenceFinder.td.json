@@ -1,0 +1,43 @@
+{
+    "title": "Conference Finder",
+    "description": "A thing that helps to find conferences",
+    "@context": [
+        "https://www.w3.org/2019/wot/td/v1",
+        "https://www.w3.org/2022/wot/td/v1.1"
+    ],
+    "properties": {
+        "conferences": {
+            "description": "List of upcoming conferences",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "confId": { "type": "string" },
+                    "name": { "type": "string" },
+                    "location": { "type": "string" },
+                    "startDate": { "type": "string", "format": "date" },
+                    "endDate": { "type": "string", "format": "date" }
+                }
+            }
+        }
+    },
+    "actions": {
+        "bookConference": {
+            "description": "Book a conference by ID",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "string" }
+                },
+                "required": ["id"]
+            },
+            "output": {
+                "type": "object",
+                "properties": {
+                    "status": { "type": "string" },
+                    "message": { "type": "string" }
+                }
+            }
+        }
+    }
+}

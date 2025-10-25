@@ -1,0 +1,68 @@
+{
+    "title": "Travel Planner Thing",
+    "description": "A thing that helps to plan travels, by finding flights and hotels",
+    "@context": [
+        "https://www.w3.org/2019/wot/td/v1",
+        "https://www.w3.org/2022/wot/td/v1.1"
+    ],
+    "properties": {
+    },
+    "actions": {
+        "findFlight": {
+            "description": "Finds flight offers based on the provided criteria",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "from": { "type": "string", "description": "Departure location (IATA code)" },
+                    "to": { "type": "string", "description": "Arrival location (IATA code)" },
+                    "departureDate": { "type": "string", "format": "date", "description": "Departure date (YYYY-MM-DD)" },
+                    "returnDate": { "type": "string", "format": "date", "description": "Return date (YYYY-MM-DD)" },
+                    "passengers": { "type": "integer", "minimum": 1, "description": "Number of passengers" }
+                },
+                "required": ["from", "to", "departureDate"]
+            },
+            "output": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "airline": { "type": "string", "description": "Airline name" },
+                        "flightNumber": { "type": "string", "description": "Flight number" },
+                        "departureTime": { "type": "string", "format": "date-time", "description": "Departure time" },
+                        "arrivalTime": { "type": "string", "format": "date-time", "description": "Arrival time" },
+                        "price": { "type": "number", "description": "Price of the flight" },
+                        "currency": { "type": "string", "description": "Currency of the price" }
+                    },
+                    "required": ["airline", "flightNumber", "departureTime", "arrivalTime", "price", "currency"]
+                }
+            }
+        },
+        "findHotels": {
+            "description": "Finds hotel offers based on the provided criteria",
+            "input": {
+                "type": "object",
+                "properties": {
+                    "location": { "type": "string", "description": "Location (city or area)" },
+                    "checkInDate": { "type": "string", "format": "date", "description": "Check-in date (YYYY-MM-DD)" },
+                    "checkOutDate": { "type": "string", "format": "date", "description": "Check-out date (YYYY-MM-DD)" },
+                    "guests": { "type": "integer", "minimum": 1, "description": "Number of guests" }
+                },
+                "required": ["location", "checkInDate", "checkOutDate"]
+            },
+            "output": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "hotelName": { "type": "string", "description": "Hotel name" },
+                        "address": { "type": "string", "description": "Hotel address" },
+                        "rating": { "type": "number", "minimum": 0, "maximum": 5, "description": "Hotel rating" },
+                        "pricePerNight": { "type": "number", "description": "Price per night" },
+                        "currency": { "type": "string", "description": "Currency of the price" }
+                    },
+                    "required": ["hotelName", "address", "rating", "pricePerNight", "currency"]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+{
+  "@context": "https://www.w3.org/2022/wot/td/v1.1",
+  "id": "urn:uuid:0804d572-cce8-422a-bb7c-4412fcd56f06",
+  "@type": "Thing",
+  "title": "Bank Account Thing",
+  "description": "...",
+  "securityDefinitions": {
+    "basic_sc": {
+      "scheme": "basic",
+      "in": "header"
+    }
+  },
+  "security": "basic_sc",
+  "properties": {
+    "balance": {
+      "type": "number",
+      "forms": [{"href": "http://myAccount.com/balance"}]
+    }
+  },
+  "actions": {
+    "deposit": {
+      "input": {
+        "type": "number"
+      },
+      "forms": [{"href": "https://myAccount.com/deposit"}]
+    },
+    "withdraw": {
+      "input": {
+        "type": "number"
+      },
+      "forms": [{"href": "https://myAccount.com/withdraw"}]},
+    "transfer": {
+      "input": {
+        "type": "object",
+        "properties": {
+          "targetAccount": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          }
+        }
+      },
+      "forms": [{"href": "https://myAccount.com/transfer"}]},
+    "requestDirectDebit": {
+      "input": {
+        "type": "object",
+        "properties": {
+          "sourceAccount": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          }
+        }
+      },
+      "forms": [{"href": "https://myAccount/requestDirectDebit"}]
+    }
+  },
+  "events": {
+    "receiveTransfer": {
+      "data": {
+        "type": "object",
+        "properties": {
+          "sourceAccount": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          }
+        }
+      },
+      "forms": [{"href": "https://myAccount/receiveTransfer"}]
+    }
+  }
+}
